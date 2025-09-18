@@ -139,8 +139,38 @@ def user_processing():
         
         return "User stored successfully"
 
+    # Task 6: Data validation
+    @task
+    def validate_data(**context):
+        """Validate that user data was stored correctly."""
+        try:
+            hook = PostgresHook(postgres_conn_id="postgres_conn")
+            
+            # Count total records
+            result = hook.get_first("SELECT COUNT(*) as count FROM users")
+            total_count = result[0] if result else 0
+            
+            # Get latest record
+            latest_record = hook.get_first(
+                "SELECT id, firstname, lastname, email, created_at FROM users ORDER BY created_at DESC LIMIT 1"
+            )
+            
+            print(f"Total users in database: {total_count}")
+            if latest_record:
+                print(f"Latest user: {latest_record[3]} (ID: {latest_record[0]})")
+            
+            return {
+                "total_users": total_count,
+                "latest_user": latest_record[3] if latest_record else None,
+                "validation_status": "SUCCESS"
+            }
+            
+        except Exception as e:
+            print(f"Data validation failed: {e}")
+            raise
+
     # Define task dependencies
-    create_table >> is_api_available() >> extract_user() >> process_user() >> store_user()
+    create_table >> is_api_available() >> extract_user() >> process_user() >> store_user() >> validate_data()
 
 # Create the DAG instance
 user_processing_dag = user_processing()
