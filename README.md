@@ -215,16 +215,6 @@ AIRFLOW__LOGGING__LOGGING_LEVEL: 'DEBUG'
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👨‍💻 Author
-
-**Mousami Soni**
-- GitHub: [@Mousami7](https://github.com/Mousami7)
-- LinkedIn: [Mousami Soni](https://www.linkedin.com/in/mousami7/)
-- Email: sonimousami3@gmail.com
 
 ## 🎯 POC Project
 
