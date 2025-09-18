@@ -20,8 +20,15 @@ graph TD
     D --> E[Store in PostgreSQL]
     E --> F[Validate Data]
     
-    B --> G[External API]
-    E --> H[PostgreSQL Database]
+    B --> G[External API<br/>Marc Lamberti's fakeuser dataset]
+    E --> H[PostgreSQL Database<br/>users table]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#fff3e0
+    style D fill:#fff3e0
+    style E fill:#fff3e0
+    style F fill:#e8f5e8
 ```
 
 ## 🛠️ Features
@@ -59,8 +66,8 @@ airflow-intro/
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
-   cd airflow-intro
+   git clone https://github.com/Mousami7/airflow-user-processing-pipeline.git
+   cd airflow-user-processing-pipeline
    ```
 
 2. **Start the services**
@@ -206,15 +213,6 @@ AIRFLOW__LOGGING__LOGGING_LEVEL: 'DEBUG'
 - [Apache Airflow Documentation](https://airflow.apache.org/docs/)
 - [Airflow TaskFlow API](https://airflow.apache.org/docs/apache-airflow/stable/tutorial/taskflow.html)
 - [PostgreSQL with Airflow](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
 
 ## 🎯 POC Project
 
