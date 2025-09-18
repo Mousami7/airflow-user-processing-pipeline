@@ -20,7 +20,7 @@ graph TD
     D --> E[Store in PostgreSQL]
     E --> F[Validate Data]
     
-    B --> G[External API<br/>Marc Lamberti's fakeuser dataset]
+    G[External API<br/>Marc Lamberti's fakeuser dataset] --> C
     E --> H[PostgreSQL Database<br/>users table]
     
     style A fill:#e1f5fe
@@ -29,6 +29,8 @@ graph TD
     style D fill:#fff3e0
     style E fill:#fff3e0
     style F fill:#e8f5e8
+    style G fill:#f3e5f5
+    style H fill:#f3e5f5
 ```
 
 ## 🛠️ Features
